@@ -13,10 +13,10 @@ spec:
   source:
     repoURL: 'https://github.com/nathekame/k8-argo-cd.git'
     targetRevision: main
-    path: ../helm-chart
+    path: helm-chart
     helm:
       valueFiles:
-        - values.yaml
+        - Values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: devopstest
