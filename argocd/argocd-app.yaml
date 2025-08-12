@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: web-application
-  namespace: default
+  namespace: devopstest
   labels:
     app: webApp
     environment: production
@@ -19,7 +19,7 @@ spec:
         - values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: default
+    namespace: devopstest
   syncPolicy:
     automated:
       prune: true
