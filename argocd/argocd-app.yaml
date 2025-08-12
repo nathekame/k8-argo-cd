@@ -17,6 +17,7 @@ spec:
     helm:
       valueFiles:
         - Values.yaml
+      releaseName: devopstestv1
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: devopstest
