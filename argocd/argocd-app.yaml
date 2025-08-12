@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: web-application
-  namespace: argocd
+  namespace: default
   labels:
     app: webApp
     environment: production
