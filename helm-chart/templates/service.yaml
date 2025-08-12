@@ -1,11 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "webapp.fullname" . }}
+  # The service name helper should match your _helpers.tpl file
+  name: {{ include "helm-chart.fullname" . }}
+  labels:
+    # Use the labels helper to ensure consistency
+    {{- include "helm-chart.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: 5000
+      # Use the same port for the target port for consistency
+      targetPort: {{ .Values.service.port }}
   selector:
-    app: {{ include "webapp.name" . }}
+    # This selector must match the labels on the pods in your deployment
+    {{- include "helm-chart.selectorLabels" . | nindent 4 }}

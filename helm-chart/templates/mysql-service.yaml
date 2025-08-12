@@ -5,7 +5,7 @@ metadata:
   name: {{ include "helm-chart.fullname" . }}-mysql
   labels:
     {{- include "helm-chart.labels" . | nindent 4 }}
-    app.kubernetes.io/component: mysql # This label now matches the Deployment's pod labels
+    app.kubernetes.io/component: mysql
 spec:
   type: ClusterIP
   ports:
@@ -15,5 +15,5 @@ spec:
       name: mysql
   selector:
     {{- include "helm-chart.selectorLabels" . | nindent 4 }}
-    app.kubernetes.io/component: mysql # The selector now correctly targets the MySQL pods
+    app.kubernetes.io/component: mysql
 {{- end }}
