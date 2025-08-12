@@ -13,7 +13,7 @@ spec:
   source:
     repoURL: 'https://github.com/nathekame/k8-argo-cd.git'
     targetRevision: main
-    path: helm-chart
+    path: .
     helm:
       valueFiles:
         - values.yaml
